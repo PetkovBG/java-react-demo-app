@@ -15,3 +15,5 @@ const Trailer = () => {
         </div>
     )
 }
+
+export default Trailer;
