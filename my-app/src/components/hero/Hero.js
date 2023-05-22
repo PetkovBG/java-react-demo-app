@@ -1,4 +1,5 @@
 import './Hero.css';
+import { Link } from 'react-router-dom';
 import Carousel from 'react-material-ui-carousel';
 import { Paper } from '@mui/material';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -22,11 +23,13 @@ const Hero = ({ movies }) => {
                                             <h4>{movie.title}</h4>
                                         </div>
                                         <div className='movie-buttons-container'>
-                                            <div className='movie-button-icon-container'>
+                                            <Link to={`/Trailer/${movie.trailerLink.substring(movie.trailerLink.length - 11)}`}>
+                                            <div className='play-button-icon-container'>
                                                 <FontAwesomeIcon className='play-button-icon'
                                                 icon = {faCirclePlay}
                                                 />
                                             </div>
+                                            </Link>
                                         </div>
                                     </div>
                                 </div>
