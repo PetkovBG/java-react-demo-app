@@ -14,3 +14,5 @@ const ReviewForm = ({handleSubmit, revText, labelText, defaultValue}) => {
         </div>
     )
 }
+
+export default ReviewForm;
