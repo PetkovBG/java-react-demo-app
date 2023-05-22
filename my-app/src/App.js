@@ -10,17 +10,18 @@ import Home from './components/home/Home';
 
 function App() {
 
-  const [movies, setMovies] = useState();
+  const [movies, setMovies] = useState([]);
 
   const getMovies = async () => {
 
     try {
       const response = await api.get('/api/v1/movies');
 
-      console.log(response.data);
+      console.log("Try", response.data);
 
       setMovies(response.data);
     } catch (err) {
+      console.log("There is an error");
       console.log(err);
     }
 
@@ -30,12 +31,13 @@ function App() {
     getMovies();
   }, [])
 
+  console.log("Main", movies);
+
   return (
     <div className="App">
-
     <Routes>
-      <Route path="/" element={<Layout />}>
-      <Route path="/" element={<Home />} />
+      <Route path="/" element={<Layout />} >
+      <Route path="/" element={<Home movies={movies} />} />
       </Route>
     </Routes>
 

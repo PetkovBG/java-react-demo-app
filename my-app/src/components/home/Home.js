@@ -1,10 +1,9 @@
-import React from 'react';
+import Hero from "../hero/Hero";
 
 const Home = ({movies}) => {
+    console.log("Movie here", movies);
     return (
-        <div>
-            Welcome ladies and gentlemen!
-        </div>
+        <Hero movies={movies} />
     )
 }
 
