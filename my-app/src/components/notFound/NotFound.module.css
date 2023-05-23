@@ -1,0 +1,12 @@
+.homeLink{
+    text-decoration: none;
+    cursor: pointer;
+    color: white;
+}
+
+.homeLink:hover{
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: white;
+}
