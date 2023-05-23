@@ -22,11 +22,9 @@ function App() {
     try {
       const response = await api.get('/api/v1/movies');
 
-      console.log("Try", response.data);
 
       setMovies(response.data);
     } catch (err) {
-      console.log("There is an error");
       console.log(err);
     }
 
@@ -37,7 +35,6 @@ function App() {
       const response = await api.get(`/api/v1/movies/${movieId}`)
 
       const singleMovie = response.data;
-      // console.log("singleMovie", singleMovie.reviewIds);
       setMovie(singleMovie);
 
       setReviews(singleMovie.reviewIds);
@@ -50,8 +47,6 @@ function App() {
   useEffect(() => {
     getMovies();
   }, [])
-
-  console.log("Main", movies);
 
   return (
     <div className="App">

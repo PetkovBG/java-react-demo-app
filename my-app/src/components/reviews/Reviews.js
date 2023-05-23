@@ -6,8 +6,6 @@ import ReviewForm from "../reviewForm/ReviewForm"
 
 const Reviews = ({ getMovieData, movie, reviews, setReviews }) => {
 
-    console.log("Reviews at start", reviews);
-
     const revText = useRef();
     let params = useParams();
     const movieId = params.movieId;
@@ -24,7 +22,6 @@ const Reviews = ({ getMovieData, movie, reviews, setReviews }) => {
             try {
 
                 const repsonse = await api.post("/api/v1/reviews", {reviewBody:rev.value, imdbId:movieId});
-                console.log("reviews", reviews);
                 const updatedReviews = [...reviews, {body: rev.value}];
     
                 rev.value = "";
