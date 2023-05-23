@@ -3,6 +3,7 @@ import api from '../../api/axiosConfig'
 import { useParams } from "react-router-dom"
 import { Container, Row, Col } from 'react-bootstrap'
 import ReviewForm from "../reviewForm/ReviewForm"
+import React from 'react';
 
 const Reviews = ({ getMovieData, movie, reviews, setReviews }) => {
 
@@ -35,7 +36,6 @@ const Reviews = ({ getMovieData, movie, reviews, setReviews }) => {
 
         
     }
-
     return (
         <Container>
             <Row>
@@ -65,7 +65,7 @@ const Reviews = ({ getMovieData, movie, reviews, setReviews }) => {
                     {
                         reviews?.map((review) => {
                             return (
-                                <>
+                                <React.Fragment key={review.id}>
                                     <Row>
                                         <Col>{review.body}</Col>
                                     </Row>
@@ -74,7 +74,7 @@ const Reviews = ({ getMovieData, movie, reviews, setReviews }) => {
                                             <hr />
                                         </Col>
                                     </Row>
-                                </>
+                                </React.Fragment>
                             )
                         })
                     }
